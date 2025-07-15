@@ -1,0 +1,15 @@
+<!ELEMENT groups (group*)>
+<!ELEMENT group (name, description?, created_by, created_at, avatar?, members, settings?)>
+<!ATTLIST group id CDATA #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT created_by (#PCDATA)>
+<!ELEMENT created_at (#PCDATA)>
+<!ELEMENT avatar (#PCDATA)>
+<!ELEMENT members (member*)>
+<!ELEMENT member EMPTY>
+<!ATTLIST member user_id CDATA #REQUIRED role CDATA #REQUIRED joined_at CDATA #IMPLIED>
+<!ELEMENT settings (allow_files?, max_file_size?, only_admin_can_add?)>
+<!ELEMENT allow_files (#PCDATA)>
+<!ELEMENT max_file_size (#PCDATA)>
+<!ELEMENT only_admin_can_add (#PCDATA)> 

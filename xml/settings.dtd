@@ -1,0 +1,26 @@
+<!ELEMENT settings (app_settings, user_settings)>
+<!ELEMENT app_settings (max_file_size?, allowed_file_types?, max_message_length?, session_timeout?, max_group_members?, enable_notifications?, enable_file_sharing?, enable_group_creation?)>
+<!ELEMENT max_file_size (#PCDATA)>
+<!ELEMENT allowed_file_types (#PCDATA)>
+<!ELEMENT max_message_length (#PCDATA)>
+<!ELEMENT session_timeout (#PCDATA)>
+<!ELEMENT max_group_members (#PCDATA)>
+<!ELEMENT enable_notifications (#PCDATA)>
+<!ELEMENT enable_file_sharing (#PCDATA)>
+<!ELEMENT enable_group_creation (#PCDATA)>
+<!ELEMENT user_settings (user*)>
+<!ELEMENT user (notifications?, privacy?, theme?, language?)>
+<!ATTLIST user id CDATA #REQUIRED>
+<!ELEMENT notifications (message_notifications?, group_notifications?, file_notifications?, sound_enabled?, vibration_enabled?)>
+<!ELEMENT message_notifications (#PCDATA)>
+<!ELEMENT group_notifications (#PCDATA)>
+<!ELEMENT file_notifications (#PCDATA)>
+<!ELEMENT sound_enabled (#PCDATA)>
+<!ELEMENT vibration_enabled (#PCDATA)>
+<!ELEMENT privacy (show_status?, show_last_seen?, allow_contact_requests?, read_receipts?)>
+<!ELEMENT show_status (#PCDATA)>
+<!ELEMENT show_last_seen (#PCDATA)>
+<!ELEMENT allow_contact_requests (#PCDATA)>
+<!ELEMENT read_receipts (#PCDATA)>
+<!ELEMENT theme (#PCDATA)>
+<!ELEMENT language (#PCDATA)> 

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+    <app_settings>
+        <max_file_size>10485760</max_file_size>
+        <allowed_file_types>pdf,doc,docx,txt,jpg,jpeg,png,gif,mp3,mp4,avi</allowed_file_types>
+        <max_message_length>1000</max_message_length>
+        <session_timeout>3600</session_timeout>
+        <max_group_members>100</max_group_members>
+        <enable_notifications>true</enable_notifications>
+        <enable_file_sharing>true</enable_file_sharing>
+        <enable_group_creation>true</enable_group_creation>
+    </app_settings>
+    <user_settings>
+        <user id="1">
+            <notifications>
+                <message_notifications>true</message_notifications>
+                <group_notifications>true</group_notifications>
+                <file_notifications>true</file_notifications>
+                <sound_enabled>true</sound_enabled>
+                <vibration_enabled>true</vibration_enabled>
+            </notifications>
+            <privacy>
+                <show_status>true</show_status>
+                <show_last_seen>true</show_last_seen>
+                <allow_contact_requests>true</allow_contact_requests>
+                <read_receipts>true</read_receipts>
+            </privacy>
+            <theme>light</theme>
+            <language>fr</language>
+        </user>
+        <user id="2">
+            <notifications>
+                <message_notifications>true</message_notifications>
+                <group_notifications>false</group_notifications>
+                <file_notifications>true</file_notifications>
+                <sound_enabled>false</sound_enabled>
+                <vibration_enabled>true</vibration_enabled>
+            </notifications>
+            <privacy>
+                <show_status>false</show_status>
+                <show_last_seen>false</show_last_seen>
+                <allow_contact_requests>false</allow_contact_requests>
+                <read_receipts>false</read_receipts>
+            </privacy>
+            <theme>dark</theme>
+            <language>fr</language>
+        </user>
+        <user id="3">
+            <notifications>
+                <message_notifications>true</message_notifications>
+                <group_notifications>true</group_notifications>
+                <file_notifications>false</file_notifications>
+                <sound_enabled>true</sound_enabled>
+                <vibration_enabled>false</vibration_enabled>
+            </notifications>
+            <privacy>
+                <show_status>true</show_status>
+                <show_last_seen>true</show_last_seen>
+                <allow_contact_requests>true</allow_contact_requests>
+                <read_receipts>true</read_receipts>
+            </privacy>
+            <theme>light</theme>
+            <language>fr</language>
+        <pushNotifications>true</pushNotifications></user>
+    </user_settings>
+<user id="4"><push_notifications>true</push_notifications><sounds>true</sounds><vibrations>true</vibrations><online_status>true</online_status><read_receipts>true</read_receipts></user></settings>

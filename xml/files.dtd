@@ -1,0 +1,15 @@
+<!ELEMENT files (file*)>
+<!ELEMENT file (message_id, sender_id, receiver_id, group_id, filename, file_path, file_size, file_type, mime_type, uploaded_at, downloads, status)>
+<!ATTLIST file id CDATA #REQUIRED>
+<!ELEMENT message_id (#PCDATA)>
+<!ELEMENT sender_id (#PCDATA)>
+<!ELEMENT receiver_id (#PCDATA)>
+<!ELEMENT group_id (#PCDATA)>
+<!ELEMENT filename (#PCDATA)>
+<!ELEMENT file_path (#PCDATA)>
+<!ELEMENT file_size (#PCDATA)>
+<!ELEMENT file_type (#PCDATA)>
+<!ELEMENT mime_type (#PCDATA)>
+<!ELEMENT uploaded_at (#PCDATA)>
+<!ELEMENT downloads (#PCDATA)>
+<!ELEMENT status (#PCDATA)> 

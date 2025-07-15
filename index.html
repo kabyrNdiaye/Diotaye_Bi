@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Platform - WhatsApp Style</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Sidebar Header -->
+            <div class="sidebar-header">
+                <h2>Chats</h2>
+                <div class="user-info">
+                    <div class="user-avatar" id="currentUserAvatar">U</div>
+                    <div class="user-status">
+                        <div id="currentUserName">Utilisateur</div>
+                    </div>
+                    <button id="logoutBtn" class="logout-btn" title="Déconnexion" style="margin-left: 10px; background: #fff; color: #128C7E; border: 1px solid #128C7E; border-radius: 20px; padding: 6px 16px; font-weight: bold; cursor: pointer; transition: background 0.2s;">Déconnexion</button>
+                    <button class="settings-btn" onclick="openSettings()" title="Paramètres">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Rechercher ou démarrer une nouvelle conversation" id="searchBar">
+            </div>
+
+            <!-- Navigation Tabs -->
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-tab="discussions">
+                    <i class="fas fa-comments"></i> Discussions
+                </button>
+                <button class="nav-tab" data-tab="contacts">
+                    <i class="fas fa-address-book"></i> Contacts
+                </button>
+                <button class="nav-tab" data-tab="groups">
+                    <i class="fas fa-users"></i> Groupes
+                </button>
+            </div>
+
+            <!-- Discussions Header -->
+            <div class="discussions-header" style="padding: 12px; background: #fff; border-bottom: 1px solid #E9EDEF;">
+                <button class="add-discussion-btn btn btn-primary" id="addDiscussionBtn" type="button" style="width:100%;">
+                    <i class="fas fa-plus"></i> Ajouter une discussion
+                </button>
+            </div>
+            <!-- Discussions List -->
+            <div class="contact-list" id="discussionsList">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    Chargement des discussions...
+                </div>
+            </div>
+
+            <!-- Contacts List (gestion) -->
+            <div class="contact-list" id="contactsList" style="display: none;">
+                <div class="contacts-header">
+                    <button class="add-contact-btn" id="showAddContactFormBtn" type="button">
+                        <i class="fas fa-plus"></i> Ajouter un contact
+                    </button>
+                </div>
+                
+                                <!-- Formulaire d'ajout de contact -->
+                <div id="addContactForm" style="display:none; background: #F0F2F5; padding: 15px; border-radius: 8px; margin: 10px 0;">
+                    <h4 style="margin: 0 0 10px 0; color: #128C7E;">Rechercher un utilisateur</h4>
+                    <div style="margin-bottom: 10px;">
+                        <input type="text" id="searchContactPhone" placeholder="Numéro de téléphone" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                    <div style="display: flex; gap: 8px;">
+                        <button type="button" class="btn btn-primary" id="searchContactBtn">
+                            <i class="fas fa-search"></i> Rechercher
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="cancelAddContactBtn">
+                            <i class="fas fa-times"></i> Annuler
+                        </button>
+                    </div>
+                    <div id="searchContactResults" style="margin-top: 10px;"></div>
+                </div>
+                
+                <div class="loading">
+                    <div class="spinner"></div>
+                    Chargement des contacts...
+                </div>
+            </div>
+
+            <!-- Groups List -->
+            <div class="group-list" id="groupsList" style="display: none;">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    Chargement des groupes...
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Area -->
+        <div class="chat-area">
+            <!-- Chat Header -->
+            <div class="chat-header" id="chatHeader" style="display: none;">
+                <div class="chat-contact-info">
+                    <div class="contact-avatar" id="chatContactAvatar">C</div>
+                    <div>
+                        <div class="chat-contact-name" id="chatContactName">Contact</div>
+                    </div>
+                </div>
+                <div class="chat-actions">
+                    <button class="chat-action-btn" title="Rechercher">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="chat-action-btn" title="Plus d'options">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Welcome Message -->
+            <div class="messages-area" id="welcomeMessage">
+                <div style="text-align: center; padding: 40px 20px; color: var(--text-secondary);">
+                    <i class="fas fa-comments" style="font-size: 48px; margin-bottom: 20px; opacity: 0.5;"></i>
+                    <h3>Bienvenue sur Chat Platform</h3>
+                    <p>Sélectionnez un contact pour commencer une conversation</p>
+                </div>
+            </div>
+
+            <!-- Messages Area -->
+            <div class="messages-area" id="messagesArea" style="display: none;">
+                <!-- Messages will be loaded here -->
+    </div>
+
+            <!-- Message Input -->
+            <div class="message-input-container" id="messageInputContainer" style="display: none;">
+                <button class="upload-btn" title="Joindre un fichier" id="uploadBtn">
+                    <i class="fas fa-paperclip"></i>
+                </button>
+                <input type="file" id="fileInput" style="display:none" multiple>
+                <input type="text" class="message-input" placeholder="Tapez un message" id="messageInput">
+                <button class="send-btn" id="sendBtn" disabled>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Contact Modal -->
+    <div class="modal" id="addContactModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Ajouter un contact</h3>
+                <button class="close-btn" onclick="closeModal('addContactModal')">&times;</button>
+            </div>
+            <div class="form-group">
+                <label for="searchUser">Rechercher un utilisateur</label>
+                <input type="text" id="searchUser" placeholder="Entrez le nom ou l'email">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" onclick="searchUser()">Rechercher</button>
+            </div>
+            <div id="searchResults"></div>
+        </div>
+    </div>
+
+    <!-- Create Group Modal -->
+    <div class="modal" id="createGroupModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Créer un groupe</h3>
+                <button class="close-btn" onclick="closeModal('createGroupModal')">&times;</button>
+            </div>
+            <div class="form-group">
+                <label for="groupName">Nom du groupe</label>
+                <input type="text" id="groupName" placeholder="Entrez le nom du groupe">
+            </div>
+            <div class="form-group">
+                <label for="groupDescription">Description (optionnel)</label>
+                <textarea id="groupDescription" placeholder="Description du groupe"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Ajouter des membres</label>
+                <input type="text" id="searchGroupMembers" placeholder="Rechercher des utilisateurs">
+                <button class="btn btn-secondary" onclick="searchGroupMembers()">Rechercher</button>
+            </div>
+            <div id="groupMembersResults"></div>
+            <div class="form-group">
+                <button class="btn btn-primary" onclick="createGroup()">Créer le groupe</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Contact Modal -->
+    <div class="modal" id="editContactModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Modifier le contact</h3>
+                <button class="close-btn" onclick="closeModal('editContactModal')">&times;</button>
+            </div>
+            <input type="hidden" id="editContactId">
+            <div class="form-group">
+                <label for="editContactName">Surnom</label>
+                <input type="text" id="editContactName" placeholder="Entrez un surnom pour ce contact">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" onclick="saveContactEdit()">Sauvegarder</button>
+                <button class="btn btn-secondary" onclick="closeModal('editContactModal')">Annuler</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal pour ajouter une discussion -->
+    <div class="modal" id="addDiscussionModal" style="display:none;">
+        <div class="modal-content" style="max-width:500px;">
+            <div class="modal-header">
+                <h3 class="modal-title">Démarrer une discussion</h3>
+                <button class="close-btn" onclick="closeModal('addDiscussionModal')">&times;</button>
+            </div>
+            <div>
+                <h4>Mes contacts</h4>
+                <div id="discussionContactsList" style="margin-bottom:20px;"></div>
+                <h4>Mes groupes</h4>
+                <div id="discussionGroupsList"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- File Upload Input -->
+    <input type="file" id="fileInput" style="display: none;" multiple>
+
+    <!-- Lightbox pour l'affichage des images -->
+    <div id="imageLightbox" style="display:none; position:fixed; z-index:2000; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); align-items:center; justify-content:center;">
+      <span id="closeLightbox" style="position:absolute; right:32px; top:24px; font-size:2.5em; color:#fff; cursor:pointer; z-index:2010;">&times;</span>
+      <img id="lightboxImg" src="" alt="Image" style="max-width:90vw; max-height:85vh; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.25);">
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

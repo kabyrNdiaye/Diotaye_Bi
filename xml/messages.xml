@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages>
+    <message id="1">
+        <sender_id>1</sender_id>
+        <receiver_id>2</receiver_id>
+        <group_id/>
+        <content>Bonjour Mr Fall fera cours ou pas ?</content>
+        <timestamp>2024-07-13T01:57:00Z</timestamp>
+        <type>text</type>
+        <status>read</status>
+        <file_id/>
+    </message>
+    <message id="2">
+        <sender_id>1</sender_id>
+        <receiver_id>2</receiver_id>
+        <group_id/>
+        <content>Salut, comment vas-tu ?</content>
+        <timestamp>2024-07-13T02:25:33Z</timestamp>
+        <type>text</type>
+        <status>read</status>
+        <file_id/>
+    </message>
+    <message id="3">
+        <sender_id>1</sender_id>
+        <receiver_id>2</receiver_id>
+        <group_id/>
+        <content>Voici mon CV que je desire envoyer</content>
+        <timestamp>2024-07-13T15:01:06Z</timestamp>
+        <type>text</type>
+        <status>delivered</status>
+        <file_id/>
+    </message>
+    <message id="4">
+        <sender_id>2</sender_id>
+        <receiver_id>1</receiver_id>
+        <group_id/>
+        <content>Salut ! Oui, il fera cours demain à 10h</content>
+        <timestamp>2024-07-13T15:05:00Z</timestamp>
+        <type>text</type>
+        <status>read</status>
+        <file_id/>
+    </message>
+    <message id="5">
+        <sender_id>1</sender_id>
+        <receiver_id/>
+        <group_id>1</group_id>
+        <content>Bonjour à tous ! Qui a les notes du dernier cours ?</content>
+        <timestamp>2024-07-13T16:00:00Z</timestamp>
+        <type>text</type>
+        <status>sent</status>
+        <file_id/>
+    </message>
+<message id="6"><sender_id>3</sender_id><receiver_id>1</receiver_id><group_id/><content>Bonjour</content><timestamp>2025-07-14T21:20:13+02:00</timestamp><type>text</type><status>sent</status><file_id/></message><message id="7"><sender_id>3</sender_id><receiver_id>1</receiver_id><group_id/><content>namenalla</content><timestamp>2025-07-14T21:20:25+02:00</timestamp><type>text</type><status>sent</status><file_id/></message><message id="8"><sender_id>3</sender_id><receiver_id>5</receiver_id><group_id/><content>on doit faire cours oubien? waala xamo</content><timestamp>2025-07-14T21:24:58+02:00</timestamp><type>text</type><status>sent</status><file_id/></message><message id="9"><sender_id>3</sender_id><receiver_id>1</receiver_id><group_id/><content>coucou</content><timestamp>2025-07-14T21:35:34+02:00</timestamp><type>text</type><status>sent</status><file_id/></message><message id="10"><sender_id>3</sender_id><receiver_id>4</receiver_id><group_id/><content>moytoull dé</content><timestamp>2025-07-14T21:35:59+02:00</timestamp><type>text</type><status>read</status><file_id/></message><message id="11"><sender_id>3</sender_id><receiver_id>5</receiver_id><group_id/><content>bonsoir</content><timestamp>2025-07-15T00:40:36+02:00</timestamp><type>text</type><status>sent</status><file_id/></message><message id="12"><sender_id>3</sender_id><receiver_id>1</receiver_id><group_id/><content>Bonjour</content><timestamp>2025-07-15T01:03:54+02:00</timestamp><type>text</type><status>sent</status><file_id/></message><message id="13"><sender_id>3</sender_id><receiver_id>4</receiver_id><group_id/><content>Bonjour</content><timestamp>2025-07-15T05:18:54+02:00</timestamp><type>text</type><status>read</status><file_id/></message><message id="14"><sender_id>3</sender_id><receiver_id>4</receiver_id><group_id/><content>namela</content><timestamp>2025-07-15T05:36:25+02:00</timestamp><type>text</type><status>read</status><file_id/></message><message id="15"><sender_id>3</sender_id><receiver_id>4</receiver_id><group_id/><content>Bonjour sis</content><timestamp>2025-07-15T05:55:12+02:00</timestamp><type>text</type><status>read</status><file_id/></message><message id="16"><sender_id>3</sender_id><receiver_id>2</receiver_id><group_id/><content>Bonjour ani wa france</content><timestamp>2025-07-15T05:58:33+02:00</timestamp><type>text</type><status>sent</status><file_id/></message><message id="17"><sender_id>3</sender_id><receiver_id>7</receiver_id><group_id/><content>Bonjour soeurette</content><timestamp>2025-07-15T06:35:20+02:00</timestamp><type>text</type><status>read</status><file_id/></message><message id="18"><sender_id>7</sender_id><receiver_id>3</receiver_id><group_id/><content>bonjour namenala</content><timestamp>2025-07-15T06:38:04+02:00</timestamp><type>text</type><status>read</status><file_id/></message><message id="19"><sender_id/><receiver_id/><group_id/><content>C:\xampp\htdocs\chat_platform\php/../uploads/bijoux.jpeg</content><timestamp>2025-07-15T04:39:20+00:00</timestamp><type>file</type></message><message id="20"><sender_id>7</sender_id><receiver_id>3</receiver_id><group_id/><content>Fichier: bijoux.jpeg</content><timestamp>2025-07-15T06:50:25+02:00</timestamp><type>file</type><status>read</status><file_id>4</file_id></message><message id="21"><sender_id>3</sender_id><receiver_id>7</receiver_id><group_id/><content>Fichier: bijoux.jpeg</content><timestamp>2025-07-15T07:00:54+02:00</timestamp><type>file</type><status>sent</status><file_id>5</file_id></message><message id="22"><sender_id>3</sender_id><receiver_id>7</receiver_id><group_id/><content>Fichier: IF-ProjetDSS_XML.pdf</content><timestamp>2025-07-15T07:19:21+02:00</timestamp><type>file</type><status>sent</status><file_id>6</file_id></message><message id="23"><sender_id>3</sender_id><receiver_id/><group_id>3</group_id><content>Salam tout le monde</content><timestamp>2025-07-15T08:08:47+02:00</timestamp><type>text</type><status>sent</status><file_id/></message><message id="24"><sender_id>3</sender_id><receiver_id/><group_id>3</group_id><content>yawww rare gaa dé</content><timestamp>2025-07-15T13:33:15+02:00</timestamp><type>text</type><status>sent</status><file_id/></message><message id="25"><sender_id>3</sender_id><receiver_id/><group_id>3</group_id><content>sonou na</content><timestamp>2025-07-15T17:11:16+02:00</timestamp><type>text</type><status>sent</status><file_id/></message><message id="26"><sender_id>4</sender_id><receiver_id/><group_id>3</group_id><content>ziar nalla</content><timestamp>2025-07-15T19:22:29+02:00</timestamp><type>text</type><status>sent</status><file_id/></message><message id="27"><sender_id>3</sender_id><receiver_id/><group_id>3</group_id><content>Mr fall a envoye un projet</content><timestamp>2025-07-15T19:37:13+02:00</timestamp><type>text</type><status>sent</status><file_id/></message><message id="28"><sender_id>3</sender_id><receiver_id/><group_id>3</group_id><content>Fichier: IF-ProjetDSS_XML (1).pdf</content><timestamp>2025-07-15T19:37:33+02:00</timestamp><type>file</type><status>sent</status><file_id>7</file_id></message><message id="29"><sender_id>3</sender_id><receiver_id/><group_id>3</group_id><content>Fichier: IF-ProjetDSS_XML (1).pdf</content><timestamp>2025-07-15T19:37:48+02:00</timestamp><type>file</type><status>sent</status><file_id>8</file_id></message><message id="30"><sender_id>3</sender_id><receiver_id/><group_id>3</group_id><content>j'ai oublié</content><timestamp>2025-07-15T20:16:37+02:00</timestamp><type>text</type><status>sent</status><file_id/></message><message id="31"><sender_id>3</sender_id><receiver_id/><group_id>3</group_id><content>Fichier: bijoux.jpeg</content><timestamp>2025-07-15T20:17:11+02:00</timestamp><type>file</type><status>sent</status><file_id>9</file_id></message><message id="32"><sender_id>3</sender_id><receiver_id>4</receiver_id><group_id/><content>oui</content><timestamp>2025-07-15T20:21:45+02:00</timestamp><type>text</type><status>read</status><file_id/></message><message id="33"><sender_id>4</sender_id><receiver_id>3</receiver_id><group_id/><content>Fichier: document.jpg</content><timestamp>2025-07-15T20:41:12+02:00</timestamp><type>file</type><status>read</status><file_id>10</file_id></message></messages>

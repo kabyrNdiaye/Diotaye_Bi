@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paramètres - Chat Platform</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .settings-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .settings-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .settings-section {
+            margin-bottom: 30px;
+        }
+        
+        .settings-section h3 {
+            color: var(--whatsapp-header);
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: var(--whatsapp-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        
+        .profile-avatar:hover {
+            opacity: 0.8;
+        }
+        
+        .settings-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .settings-row:last-child {
+            border-bottom: none;
+        }
+        
+        .settings-label {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+        
+        .settings-value {
+            color: var(--text-secondary);
+        }
+        
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 24px;
+            background: #ccc;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .toggle-switch.active {
+            background: var(--whatsapp-green);
+        }
+        
+        .toggle-switch::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        
+        .toggle-switch.active::after {
+            transform: translateX(26px);
+        }
+        
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 10px 15px;
+            background: var(--whatsapp-header);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .back-btn:hover {
+            background: var(--whatsapp-dark-green);
+        }
+        
+        .danger-zone {
+            background: #fff5f5;
+            border: 1px solid #fed7d7;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        .danger-zone h3 {
+            color: #e53e3e;
+        }
+        
+        .danger-btn {
+            background: #e53e3e;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .danger-btn:hover {
+            background: #c53030;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i>
+        Retour
+    </a>
+    
+    <div class="settings-container">
+        <div class="settings-header">
+            <h2>Paramètres</h2>
+            <p>Gérez votre profil et vos préférences</p>
+        </div>
+        
+        <!-- Profil -->
+        <div class="settings-section">
+            <h3>Profil</h3>
+            <div class="profile-avatar" id="profileAvatar" onclick="changeAvatar()">
+                U
+            </div>
+            <div class="form-group">
+                <label for="profileName">Nom complet</label>
+                <input type="text" id="profileName" placeholder="Votre nom">
+            </div>
+            <!-- Supprimer le champ email du formulaire profil -->
+            <div class="form-group">
+                <label for="profileStatus">Statut</label>
+                <input type="text" id="profileStatus" placeholder="Votre statut personnel">
+            </div>
+            <button class="btn btn-primary" onclick="updateProfile()">Sauvegarder</button>
+        </div>
+        
+        <!-- Notifications -->
+        <div class="settings-section">
+            <h3>Notifications</h3>
+            <div class="settings-row">
+                <div>
+                    <div class="settings-label">Notifications push</div>
+                    <div class="settings-value">Recevoir des notifications pour les nouveaux messages</div>
+                </div>
+                <div class="toggle-switch" id="pushNotifications" onclick="toggleSetting('pushNotifications')"></div>
+            </div>
+            <div class="settings-row">
+                <div>
+                    <div class="settings-label">Sons</div>
+                    <div class="settings-value">Jouer un son pour les nouveaux messages</div>
+                </div>
+                <div class="toggle-switch" id="sounds" onclick="toggleSetting('sounds')"></div>
+            </div>
+            <div class="settings-row">
+                <div>
+                    <div class="settings-label">Vibrations</div>
+                    <div class="settings-value">Vibrer pour les nouveaux messages</div>
+                </div>
+                <div class="toggle-switch" id="vibrations" onclick="toggleSetting('vibrations')"></div>
+            </div>
+        </div>
+        
+        <!-- Confidentialité -->
+        <div class="settings-section">
+            <h3>Confidentialité</h3>
+            <div class="settings-row">
+                <div>
+                    <div class="settings-label">Statut en ligne</div>
+                    <div class="settings-value">Permettre aux autres de voir quand vous êtes en ligne</div>
+                </div>
+                <div class="toggle-switch" id="onlineStatus" onclick="toggleSetting('onlineStatus')"></div>
+            </div>
+            <div class="settings-row">
+                <div>
+                    <div class="settings-label">Confirmation de lecture</div>
+                    <div class="settings-value">Envoyer des confirmations de lecture</div>
+                </div>
+                <div class="toggle-switch" id="readReceipts" onclick="toggleSetting('readReceipts')"></div>
+            </div>
+        </div>
+        
+        <!-- Sécurité -->
+        <div class="settings-section">
+            <h3>Sécurité</h3>
+            <div class="form-group">
+                <label for="currentPassword">Mot de passe actuel</label>
+                <input type="password" id="currentPassword" placeholder="Votre mot de passe actuel">
+            </div>
+            <div class="form-group">
+                <label for="newPassword">Nouveau mot de passe</label>
+                <input type="password" id="newPassword" placeholder="Nouveau mot de passe">
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirmer le nouveau mot de passe</label>
+                <input type="password" id="confirmPassword" placeholder="Confirmer le nouveau mot de passe">
+            </div>
+            <button class="btn btn-primary" onclick="changePassword()">Changer le mot de passe</button>
+        </div>
+        
+        <!-- Zone de danger -->
+        <div class="danger-zone">
+            <h3>Zone de danger</h3>
+            <p>Ces actions sont irréversibles. Soyez prudent.</p>
+            <button class="danger-btn" onclick="deleteAccount()">Supprimer mon compte</button>
+        </div>
+    </div>
+    
+    <!-- Input pour changer l'avatar -->
+    <input type="file" id="avatarInput" accept="image/*" style="display: none;">
+    
+    <script src="js/settings.js"></script>
+</body>
+</html> 

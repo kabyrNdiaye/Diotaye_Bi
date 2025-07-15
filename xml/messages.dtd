@@ -1,0 +1,11 @@
+<!ELEMENT messages (message*)>
+<!ELEMENT message (sender_id, receiver_id, group_id, content, timestamp, type, status?, file_id?)>
+<!ATTLIST message id CDATA #REQUIRED>
+<!ELEMENT sender_id (#PCDATA)>
+<!ELEMENT receiver_id (#PCDATA)>
+<!ELEMENT group_id (#PCDATA)>
+<!ELEMENT content (#PCDATA)>
+<!ELEMENT timestamp (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT file_id (#PCDATA)> 

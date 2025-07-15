@@ -1,0 +1,9 @@
+<!ELEMENT chats (chat*)>
+<!ELEMENT chat (id, name, type, last_message?, last_time?, unread_count?, member_count?)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT last_message (#PCDATA)>
+<!ELEMENT last_time (#PCDATA)>
+<!ELEMENT unread_count (#PCDATA)>
+<!ELEMENT member_count (#PCDATA)> 

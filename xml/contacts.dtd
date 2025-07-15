@@ -1,0 +1,10 @@
+<!ELEMENT contacts (contact*)>
+<!ELEMENT contact (user_id, contact_user_id, nickname?, favorite?, blocked?, created_at?, last_contact?)>
+<!ATTLIST contact id CDATA #REQUIRED>
+<!ELEMENT user_id (#PCDATA)>
+<!ELEMENT contact_user_id (#PCDATA)>
+<!ELEMENT nickname (#PCDATA)>
+<!ELEMENT favorite (#PCDATA)>
+<!ELEMENT blocked (#PCDATA)>
+<!ELEMENT created_at (#PCDATA)>
+<!ELEMENT last_contact (#PCDATA)> 

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files>
+    <file id="1">
+        <message_id>3</message_id>
+        <sender_id>1</sender_id>
+        <receiver_id>2</receiver_id>
+        <group_id/>
+        <filename>CV_Narou_Sagne.pdf</filename>
+        <original_name>CV_Narou_Sagne.pdf</original_name>
+        <file_path>uploads/files/CV_Narou_Sagne_20240713.pdf</file_path>
+        <file_size>245760</file_size>
+        <file_type>application/pdf</file_type>
+        <mime_type>pdf</mime_type>
+        <uploaded_at>2024-07-13T15:01:06Z</uploaded_at>
+        <downloads>0</downloads>
+        <status>active</status>
+    </file>
+    <file id="2">
+        <message_id>5</message_id>
+        <sender_id>1</sender_id>
+        <receiver_id/>
+        <group_id>1</group_id>
+        <filename>notes_cours_glsi.pdf</filename>
+        <original_name>notes_cours_glsi.pdf</original_name>
+        <file_path>uploads/files/notes_cours_glsi_20240713.pdf</file_path>
+        <file_size>1048576</file_size>
+        <file_type>application/pdf</file_type>
+        <mime_type>pdf</mime_type>
+        <uploaded_at>2024-07-13T16:00:00Z</uploaded_at>
+        <downloads>2</downloads>
+        <status>active</status>
+    </file>
+    <file id="3">
+        <message_id/>
+        <sender_id>2</sender_id>
+        <receiver_id>1</receiver_id>
+        <group_id/>
+        <filename>photo_profil.jpg</filename>
+        <original_name>photo_profil.jpg</original_name>
+        <file_path>uploads/files/photo_profil_20240713.jpg</file_path>
+        <file_size>512000</file_size>
+        <file_type>image/jpeg</file_type>
+        <mime_type>jpg</mime_type>
+        <uploaded_at>2024-07-13T16:30:00Z</uploaded_at>
+        <downloads>1</downloads>
+        <status>active</status>
+    </file>
+    <file id="4">
+        <message_id/>
+        <sender_id>7</sender_id>
+        <receiver_id>3</receiver_id>
+        <group_id/>
+        <filename>6875de110dac4_bijoux.jpeg</filename>
+        <original_name>bijoux.jpeg</original_name>
+        <file_path>uploads/files/6875de110dac4_bijoux.jpeg</file_path>
+        <file_size>8319</file_size>
+        <file_type>image/jpeg</file_type>
+        <mime_type>jpeg</mime_type>
+        <uploaded_at>2025-07-15T06:50:25+02:00</uploaded_at>
+        <downloads>0</downloads>
+        <status>active</status>
+    </file>
+    <file id="5">
+        <message_id/>
+        <sender_id>3</sender_id>
+        <receiver_id>7</receiver_id>
+        <group_id/>
+        <filename>6875e0867558a_bijoux.jpeg</filename>
+        <original_name>bijoux.jpeg</original_name>
+        <file_path>uploads/files/6875e0867558a_bijoux.jpeg</file_path>
+        <file_size>8319</file_size>
+        <file_type>image/jpeg</file_type>
+        <mime_type>jpeg</mime_type>
+        <uploaded_at>2025-07-15T07:00:54+02:00</uploaded_at>
+        <downloads>4</downloads>
+        <status>active</status>
+    </file>
+    <file id="6">
+        <message_id/>
+        <sender_id>3</sender_id>
+        <receiver_id>7</receiver_id>
+        <group_id/>
+        <filename>6875e4d92a699_IF-ProjetDSS_XML.pdf</filename>
+        <original_name>IF-ProjetDSS_XML.pdf</original_name>
+        <file_path>uploads/files/6875e4d92a699_IF-ProjetDSS_XML.pdf</file_path>
+        <file_size>165164</file_size>
+        <file_type>application/pdf</file_type>
+        <mime_type>pdf</mime_type>
+        <uploaded_at>2025-07-15T07:19:21+02:00</uploaded_at>
+        <downloads>1</downloads>
+        <status>active</status>
+    </file>
+<file id="7"><message_id/><sender_id>3</sender_id><receiver_id/><group_id>3</group_id><filename>687691dd5dddb_IF-ProjetDSS_XML (1).pdf</filename><original_name>IF-ProjetDSS_XML (1).pdf</original_name><file_path>C:\xampp\htdocs\Diotaye-Bi-main\php/../uploads/files/687691dd5dddb_IF-ProjetDSS_XML (1).pdf</file_path><file_size>165164</file_size><file_type>application/pdf</file_type><mime_type>pdf</mime_type><uploaded_at>2025-07-15T19:37:33+02:00</uploaded_at><downloads>1</downloads><status>active</status></file><file id="8"><message_id/><sender_id>3</sender_id><receiver_id/><group_id>3</group_id><filename>687691ec375b7_IF-ProjetDSS_XML (1).pdf</filename><original_name>IF-ProjetDSS_XML (1).pdf</original_name><file_path>C:\xampp\htdocs\Diotaye-Bi-main\php/../uploads/files/687691ec375b7_IF-ProjetDSS_XML (1).pdf</file_path><file_size>165164</file_size><file_type>application/pdf</file_type><mime_type>pdf</mime_type><uploaded_at>2025-07-15T19:37:48+02:00</uploaded_at><downloads>0</downloads><status>active</status></file><file id="9"><message_id/><sender_id>3</sender_id><receiver_id/><group_id>3</group_id><filename>68769b27a6c31_bijoux.jpeg</filename><original_name>bijoux.jpeg</original_name><file_path>C:\xampp\htdocs\Diotaye-Bi-main\php/../uploads/files/68769b27a6c31_bijoux.jpeg</file_path><file_size>8319</file_size><file_type>image/jpeg</file_type><mime_type>jpeg</mime_type><uploaded_at>2025-07-15T20:17:11+02:00</uploaded_at><downloads>7</downloads><status>active</status></file><file id="10"><message_id/><sender_id>4</sender_id><receiver_id>3</receiver_id><group_id/><filename>6876a0c8b2bb0_document.jpg</filename><original_name>document.jpg</original_name><file_path>C:\xampp\htdocs\Diotaye-Bi-main\php/../uploads/files/6876a0c8b2bb0_document.jpg</file_path><file_size>1125689</file_size><file_type>image/jpeg</file_type><mime_type>jpg</mime_type><uploaded_at>2025-07-15T20:41:12+02:00</uploaded_at><downloads>1</downloads><status>active</status></file></files>

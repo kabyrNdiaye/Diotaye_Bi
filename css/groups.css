@@ -1,0 +1,520 @@
+/* Styles pour la gestion des groupes */
+
+/* Conteneur des groupes */
+.groups-container {
+    padding: 10px 0;
+}
+
+/* Élément de groupe */
+.group-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin: 10px 0;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.group-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    border-color: #128C7E;
+}
+
+.group-item:active {
+    transform: translateY(0);
+}
+
+/* Avatar du groupe */
+.group-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #128C7E, #25D366);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+/* Informations du groupe */
+.group-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.group-name {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.group-description {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.group-members {
+    color: #128C7E;
+    font-size: 13px;
+    margin-bottom: 3px;
+}
+
+.group-created {
+    color: #999;
+    font-size: 12px;
+}
+
+/* Badge admin */
+.admin-badge {
+    background: #ffd700;
+    color: #333;
+    padding: 2px 6px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+}
+
+/* Actions du groupe */
+.group-actions {
+    display: flex;
+    gap: 5px;
+    margin-left: 10px;
+}
+
+.group-action-btn {
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    background: #f8f9fa;
+    color: #666;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.group-action-btn:hover {
+    background: #e9ecef;
+    color: #333;
+}
+
+.group-action-btn.edit:hover {
+    background: #007bff;
+    color: white;
+}
+
+.group-action-btn.manage:hover {
+    background: #28a745;
+    color: white;
+}
+
+.group-action-btn.leave:hover {
+    background: #dc3545;
+    color: white;
+}
+
+/* Formulaire de création de groupe */
+#createGroupForm {
+    border: 2px solid #128C7E;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+#createGroupForm h4 {
+    color: #128C7E;
+    margin-bottom: 15px;
+}
+
+#groupName, #groupDescription {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+#groupName:focus, #groupDescription:focus {
+    border-color: #128C7E;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(18, 140, 126, 0.2);
+}
+
+/* Liste des contacts pour la sélection */
+#groupContactsList {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.contact-checkbox {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.3s ease;
+}
+
+.contact-checkbox:hover {
+    background-color: #f8f9fa;
+}
+
+.contact-checkbox:last-child {
+    border-bottom: none;
+}
+
+.contact-checkbox input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.contact-checkbox label {
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    flex: 1;
+}
+
+/* Bouton de création de groupe */
+.create-group-btn {
+    background: linear-gradient(135deg, #128C7E, #25D366);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.create-group-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(18, 140, 126, 0.3);
+}
+
+.create-group-btn:active {
+    transform: translateY(0);
+}
+
+/* Détails du groupe */
+.group-details {
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.group-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.group-header h2 {
+    color: #128C7E;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.group-header p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.group-stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    color: #888;
+    font-size: 14px;
+}
+
+/* Barre d'actions du groupe */
+.group-actions-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.group-actions-bar .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.group-actions-bar .btn-primary {
+    background: #007bff;
+    color: white;
+}
+
+.group-actions-bar .btn-success {
+    background: #28a745;
+    color: white;
+}
+
+.group-actions-bar .btn-warning {
+    background: #ffc107;
+    color: #333;
+}
+
+.group-actions-bar .btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.group-actions-bar .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Section des membres */
+.group-members-section {
+    margin-top: 30px;
+}
+
+.group-members-section h3 {
+    color: #128C7E;
+    margin-bottom: 20px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.members-list {
+    display: grid;
+    gap: 15px;
+}
+
+.member-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.member-item:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+}
+
+.member-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #128C7E, #25D366);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.member-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.member-name {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.member-status {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 2px;
+}
+
+.member-joined {
+    color: #999;
+    font-size: 12px;
+}
+
+.member-action-btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background: #dc3545;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 12px;
+}
+
+.member-action-btn:hover {
+    background: #c82333;
+    transform: scale(1.1);
+}
+
+/* Messages d'état */
+.no-items {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 40px 20px;
+    font-size: 16px;
+}
+
+.no-contacts {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .group-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .group-avatar {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .group-actions {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+    
+    .group-actions-bar {
+        flex-direction: column;
+    }
+    
+    .group-actions-bar .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .member-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .member-avatar {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .member-action-btn {
+        margin-top: 10px;
+    }
+}
+
+/* Animations */
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.group-item {
+    animation: slideInFromBottom 0.5s ease forwards;
+}
+
+/* États de chargement */
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
+
+.loading::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #128C7E;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Messages d'erreur */
+.error {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #f5c6cb;
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* Succès */
+.success {
+    background: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #c3e6cb;
+    margin: 10px 0;
+    text-align: center;
+} 

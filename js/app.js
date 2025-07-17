@@ -2362,7 +2362,7 @@ function leaveGroup(groupId, event) {
             mainContent.innerHTML = `
                 <div class="welcome-message">
                     <div class="welcome-icon">💬</div>
-                    <h2>Bienvenue sur Chat Platform</h2>
+                    <h2>Bienvenue sur Diotaye Bii</h2>
                     <p>Sélectionnez un groupe pour commencer une discussion</p>
                 </div>
             `;
@@ -2404,7 +2404,7 @@ function deleteGroup(groupId) {
             mainContent.innerHTML = `
                 <div class="welcome-message">
                     <div class="welcome-icon">💬</div>
-                    <h2>Bienvenue sur Chat Platform</h2>
+                    <h2>Bienvenue sur Diotaye Bii</h2>
                     <p>Sélectionnez un groupe pour commencer une discussion</p>
                 </div>
             `;

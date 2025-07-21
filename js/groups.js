@@ -121,19 +121,89 @@ function displayGroups(groupsList) {
     }, 10);
 }
 
-// Créer un élément groupe
+// Ajout de la modale d'édition de groupe
+if (!document.getElementById('editGroupModal')) {
+    const modal = document.createElement('div');
+    modal.id = 'editGroupModal';
+    modal.className = 'modal';
+    modal.style.display = 'none';
+    modal.innerHTML = `
+        <div class="modal-content" style="max-width:400px;margin:auto;padding:24px;background:#fff;border-radius:10px;box-shadow:0 2px 16px rgba(0,0,0,0.15);">
+            <span class="close-btn" id="closeEditGroupModal" style="float:right;font-size:1.5em;cursor:pointer">&times;</span>
+            <h3 style="margin-top:0">Modifier le groupe</h3>
+            <div style="margin-bottom:12px;">
+                <label for="editGroupName">Nom du groupe</label>
+                <input type="text" id="editGroupName" style="width:100%;padding:8px;margin-top:4px;">
+            </div>
+            <div style="margin-bottom:12px;">
+                <label for="editGroupDescription">Description</label>
+                <textarea id="editGroupDescription" style="width:100%;padding:8px;margin-top:4px;resize:vertical;"></textarea>
+            </div>
+            <button id="saveEditGroupBtn" class="btn btn-primary" style="width:100%;">Enregistrer</button>
+        </div>
+    `;
+    document.body.appendChild(modal);
+    document.getElementById('closeEditGroupModal').onclick = function() {
+        document.getElementById('editGroupModal').style.display = 'none';
+    };
+}
+
+// Nouvelle fonction pour ouvrir la modale d'édition
+function openEditGroupModal(group) {
+    document.getElementById('editGroupName').value = group.name;
+    document.getElementById('editGroupDescription').value = group.description || '';
+    document.getElementById('editGroupModal').style.display = 'block';
+    document.getElementById('saveEditGroupBtn').onclick = function() {
+        saveEditGroup(group.id);
+    };
+}
+
+// Fonction pour sauvegarder les modifications
+function saveEditGroup(groupId) {
+    const newName = document.getElementById('editGroupName').value.trim();
+    const newDescription = document.getElementById('editGroupDescription').value.trim();
+    if (!newName) {
+        alert('Le nom du groupe est requis');
+        return;
+    }
+    const updateData = {
+        action: 'update_group',
+        group_id: groupId,
+        name: newName,
+        description: newDescription
+    };
+    fetch('php/groups.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(updateData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Groupe modifié avec succès !');
+            document.getElementById('editGroupModal').style.display = 'none';
+            loadGroups();
+        } else {
+            alert('Erreur: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Erreur modification groupe:', error);
+        alert('Erreur lors de la modification du groupe');
+    });
+}
+
+// Modifier le bouton crayon pour ouvrir la modale
 function createGroupElement(group) {
     const div = document.createElement('div');
     div.className = 'group-item';
     div.onclick = () => openGroup(group);
-    
     const adminBadge = group.is_admin ? '<span class="admin-badge">👑 Admin</span>' : '';
     const memberCount = group.member_count || 0;
-    
     div.innerHTML = `
-        <div class="group-avatar">
-            👥
-        </div>
+        <div class="group-avatar">👥</div>
         <div class="group-info">
             <div class="group-name">${group.name} ${adminBadge}</div>
             <div class="group-description">${group.description || 'Aucune description'}</div>
@@ -142,7 +212,7 @@ function createGroupElement(group) {
         </div>
         <div class="group-actions">
             ${group.can_manage ? `
-                <button class="group-action-btn edit" onclick="editGroup('${group.id}', event)" title="Modifier le groupe">
+                <button class="group-action-btn edit" onclick="event.stopPropagation(); openEditGroupModal(${JSON.stringify(group).replace(/"/g, '&quot;')})" title="Modifier le groupe">
                     <i class="fas fa-edit"></i>
                 </button>
                 <button class="group-action-btn manage" onclick="manageGroupMembers('${group.id}', event)" title="Gérer les membres">
@@ -152,6 +222,11 @@ function createGroupElement(group) {
             <button class="group-action-btn leave" onclick="leaveGroup('${group.id}', event)" title="Quitter le groupe">
                 <i class="fas fa-sign-out-alt"></i>
             </button>
+            ${(group.created_by == currentUser.id) ? `
+                <button class="group-action-btn delete" onclick="event.stopPropagation(); if(confirm('Voulez-vous vraiment supprimer ce groupe ? Cette action est irréversible.')) deleteGroup('${group.id}');" title="Supprimer le groupe">
+                    <i class="fas fa-trash"></i>
+                </button>
+            ` : ''}
         </div>
     `;
     return div;
@@ -221,7 +296,7 @@ function displayGroupDetails(group) {
                 <button class="btn btn-warning" onclick="leaveGroup('${group.id}')">
                     <i class="fas fa-sign-out-alt"></i> Quitter le groupe
                 </button>
-                ${group.can_manage && group.members.length <= 1 ? `
+                ${(group.created_by == currentUser.id) ? `
                     <button class="btn btn-danger" onclick="deleteGroup('${group.id}')">
                         <i class="fas fa-trash"></i> Supprimer le groupe
                     </button>

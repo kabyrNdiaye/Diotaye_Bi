@@ -62,6 +62,6 @@
             </privacy>
             <theme>light</theme>
             <language>fr</language>
-        <pushNotifications>true</pushNotifications></user>
+        <pushNotifications>false</pushNotifications><sounds>false</sounds></user>
     </user_settings>
 <user id="4"><push_notifications>true</push_notifications><sounds>true</sounds><vibrations>true</vibrations><online_status>true</online_status><read_receipts>true</read_receipts></user></settings>

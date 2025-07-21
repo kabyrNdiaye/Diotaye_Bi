@@ -2174,7 +2174,7 @@ function displayGroupDetails(group) {
                 <button class="btn btn-warning" onclick="leaveGroup('${group.id}')">
                     <i class="fas fa-sign-out-alt"></i> Quitter le groupe
                 </button>
-                ${group.can_manage && group.members.length <= 1 ? `
+                ${group.can_manage ? `
                     <button class="btn btn-danger" onclick="deleteGroup('${group.id}')">
                         <i class="fas fa-trash"></i> Supprimer le groupe
                     </button>

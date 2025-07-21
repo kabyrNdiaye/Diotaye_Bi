@@ -596,12 +596,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
         }
 
-        if ($memberCount > 1) {
-            echo json_encode(['success' => false, 'message' => 'Vous ne pouvez supprimer le groupe que s\'il est vide']);
-            exit;
-        }
-
-        // Supprimer le groupe
+        // Supprimer le groupe (suppression autorisée même s'il reste plusieurs membres)
         unset($targetGroup[0]);
 
         $xml->asXML($groupsFile);

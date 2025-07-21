@@ -47,14 +47,10 @@ users.xml ←→ settings.xml (paramètres utilisateur)
 - `uploads/files/` : Fichiers partagés dans les messages
 - `uploads/groups/` : Photos de profil des groupes
 
-## Statuts des messages :
-- `sent` : Message envoyé
-- `delivered` : Message livré
-- `read` : Message lu
+
 
 ## Types de messages :
 - `text` : Message texte
 - `file` : Message avec fichier
 - `image` : Message image
-- `audio` : Message audio
 - `video` : Message vidéo 

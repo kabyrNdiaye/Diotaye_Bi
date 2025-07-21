@@ -8,9 +8,9 @@ echo "Mot de passe hashé: $hashed\n";
 
 // Vérifier que le hash fonctionne
 if (password_verify($password, $hashed)) {
-    echo "✅ Le hash fonctionne correctement\n";
+    echo " Le hash fonctionne correctement\n";
 } else {
-    echo "❌ Erreur avec le hash\n";
+    echo " Erreur avec le hash\n";
 }
 
 // Mettre à jour le fichier users.xml avec le nouveau mot de passe
@@ -23,11 +23,11 @@ if (file_exists($xmlFile)) {
     if ($user) {
         $user->password = $hashed;
         $xml->asXML($xmlFile);
-        echo "✅ Mot de passe mis à jour dans users.xml\n";
+        echo "Mot de passe mis à jour dans users.xml\n";
     } else {
-        echo "❌ Utilisateur 1 non trouvé\n";
+        echo " Utilisateur 1 non trouvé\n";
     }
 } else {
-    echo "❌ Fichier users.xml non trouvé\n";
+    echo " Fichier users.xml non trouvé\n";
 }
 ?> 
